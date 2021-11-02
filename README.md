@@ -438,9 +438,11 @@ The `_code` type represents a code example, with an optional `language` property
 ---
 
 ### _table
+
 The `_table` type represents a table of data, a `_table` is broken up into a table caption (`_tableCaption`) table header (`_tableHeader`) and a table body (`_tableBody`), which in turn contains table rows (`_tableRow`) of which support table header cells (`_tableHeaderCell`) and table cells (`_tableCell`).
 
 #### Validation
+
 | Property | Value | Description|
 |:---|:---|
 | `_table` | Supports `_tableCaption`, `_tableHeader` and `_tableBody`  | Provides the wrapping type for a table |
@@ -581,6 +583,7 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 | imageUrl | optional | `string` |
 
 #### Example
+
 ```json
 {
   "type": "_bookmark",
@@ -619,6 +622,7 @@ The `_externalImage` type represents an image being served from an external URL 
 | altText | optional, required, decorative |
 
 #### Example
+
 ```json
 {
   "type": "_externalImage",
