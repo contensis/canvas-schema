@@ -518,14 +518,15 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 ```
 
 ### Panel
+The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message and a `panelType` property to determine its visual style / emphasis type.
 
 #### Validation
 
 | Property | Required | Values|
 |:--|:--|
 | title | optional | `string` |
-| message | required | `string` or an array of `fragment` |
-| panelType | required | info, note, warning, positive, warning, info |
+| message | required | `string` or a `fragment` array |
+| panelType | required | info (default), note, warning, positive, warning, info |
 
 #### Example
 
@@ -535,11 +536,8 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
   "value": {
     "title": "Heading",
     "message": "This is a call out message",
-  },
-  "properties": {
-    "icon": "notepad"
     "panelType": "note | warning | positive | negative | info"
-  }
+  },
 }
 ```
 
@@ -547,7 +545,7 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 
 ### Embed
 
-The ability to paste a URL of a specific type [YouTube, Vimeo, Twitter] and generate a preview to validate that the content that has been pasted is what you want also providing a richness to the editor.
+The `_embed` type takes a URL of a service to generate a preview of the URL you pasted and can contain an optional `caption`. 
 
 #### Validation
 
@@ -567,11 +565,33 @@ The ability to paste a URL of a specific type [YouTube, Vimeo, Twitter] and gene
 }
 ```
 
-
-
 ---
 
 ### Bookmark
+
+The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph](https://ogp.me/) metadata from the pasted URL.
+
+#### Validation
+
+| Property | Required | Values|
+|:--|:--|
+| url | required | `string` |
+| title | required | `string` |
+| description | optional | `string` |
+| imageUrl | optional | `string` |
+
+#### Example
+```json
+{
+  "type": "_bookmark",
+  "value": {
+    "url": "https://www.contensis.com",
+    "title": "Contensis - enterprise web content management system (CMS)",
+    "description": "The Contensis CMS powers the websites of some of the world's leading organisations. It's flexible, scalable, and easy to use.",
+    "imageUrl": "https://www.contensis.com/static/img/contensis-placeholder.jpg?eacb14cab0cf966e14750eb3b927bf99"
+  }
+}
+```
 
 ---
 
@@ -628,4 +648,3 @@ The `_externalImage` type represents an image being served from an external URL 
 4. I changed the decorators from `strong` | `emphasis` to `bold` | `italic` and then back again, as bold and italic refer to more visual styling than describing the intent of the formatting.
 5. I've added `_tableCaption` to our table definition as we should support accessible tables from the outset.
 6. Should `_tableCells` support both `string` and `fragments`
-7. `_panel` moved `panelType` into `properties`
