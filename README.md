@@ -28,7 +28,7 @@ authors:
 ## Supported _types
 
 ### _paragraph 
-The `_paragraph` type represents a standard block of text, either as plain text or formatted text using fragments and decorators. A `_paragraph` can be either a `string` or an array of `fragments`.
+The `_paragraph` type represents a standard block of text, either as plain text or formatted text using fragments and decorators. A `_paragraph` can be either a `string` or a `fragment` array.
 
 #### Properties
 
@@ -236,7 +236,7 @@ This is a lede paragraph
 
 ---
 ### _heading
-A `_heading` represents a block of text that is used as a section header, it has a `level` property to set the hierarchy of the header. A `_heading` can be either a can be either a `string` or an array of `fragments`
+A `_heading` represents a block of text that is used as a section header, it has a `level` property to set the hierarchy of the header. A `_heading` can be either a `string` or a `fragment` array.
 
 #### Properties
 | Property | Value |
@@ -301,7 +301,7 @@ A `_heading` represents a block of text that is used as a section header, it has
 ---
 
 ### _list
-A `_list` represents a flat or nested list of content. Each item in a list is represented by a `_listItem` type. A `_listItem` can be either a `string` or an array of `fragments`.
+A `_list` represents a flat or nested list of content. Each item in a list is represented by a `_listItem` type. A `_listItem` can be either a `string` or a `fragment` array.
 
 #### Properties
 | Property | Value |
@@ -444,12 +444,12 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 | Property | Value | Description|
 |:--|:--|
 | `_table` | Supports `_tableCaption`, `_tableHeader` and `_tableBody`  | Provides the wrapping type for a table |
-| `_tableCaption` | Can be either a `string` or an array of `fragments`| Defines a the table caption `<caption>` in HTML |
+| `_tableCaption` | Can be either a `string` or a `fragment` array.| Defines a the table caption `<caption>` in HTML |
 | `_tableHeader` | Supports `_tableRow` | Provides the definition of a `<thead>` element in HTML |
 | `_tableBody` | Supports `_tableRow` | Provides the definition of a `<tbody>` element in HTML |
 | `_tableRow` | Supports `_tableCell` and `_tableHeaderCell`| Defines a row of data in the table `<tr>` in HTML |
-| `_tableCell` | Can be either a `string` or an array of `fragments`| Defines a the data of a cell `<td>` in HTML |
-| `_tableHeaderCell` | Can be either a `string` or an array of `fragments`| Defines a the cell header `<th>` in HTML |
+| `_tableCell` | Can be either a `string` or a `fragment` array.| Defines a the data of a cell `<td>` in HTML |
+| `_tableHeaderCell` | Can be either a `string` or a `fragment` array.| Defines a the cell header `<th>` in HTML |
 
 
 #### Example
@@ -519,9 +519,55 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 
 ### Panel
 
+#### Validation
+
+| Property | Required | Values|
+|:--|:--|
+| title | optional | `string` |
+| message | required | `string` or an array of `fragment` |
+| panelType | required | info, note, warning, positive, warning, info |
+
+#### Example
+
+```json
+{
+  "type": "_panel",
+  "value": {
+    "title": "Heading",
+    "message": "This is a call out message",
+  },
+  "properties": {
+    "icon": "notepad"
+    "panelType": "note | warning | positive | negative | info"
+  }
+}
+```
+
 ---
 
 ### Embed
+
+The ability to paste a URL of a specific type [YouTube, Vimeo, Twitter] and generate a preview to validate that the content that has been pasted is what you want also providing a richness to the editor.
+
+#### Validation
+
+| Property | Required | Values|
+|:--|:--|
+| url | required | `string` |
+| caption | optional | `string` or a `fragment` array |
+
+#### Example
+```json
+{
+  "type": "_embed",
+  "value": {
+    "url": "https://www.youtube.com/watch?v=ArOMXELHiLw",
+    "caption": "An overview video of the Contensis CMS"
+  }
+}
+```
+
+
 
 ---
 
@@ -582,3 +628,4 @@ The `_externalImage` type represents an image being served from an external URL 
 4. I changed the decorators from `strong` | `emphasis` to `bold` | `italic` and then back again, as bold and italic refer to more visual styling than describing the intent of the formatting.
 5. I've added `_tableCaption` to our table definition as we should support accessible tables from the outset.
 6. Should `_tableCells` support both `string` and `fragments`
+7. `_panel` moved `panelType` into `properties`
