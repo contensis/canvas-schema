@@ -522,8 +522,8 @@ The `_panel` type represents a block of text which is emphasised in a document t
 
 #### Validation
 
-| Property | Required | Values|
-|:--|:--|
+| Property | Required | Values |
+|:--|:--|:--|
 | title | optional | `string` |
 | message | required | `string` or a `fragment` array |
 | panelType | required | info (default), note, warning, positive, warning, info |
@@ -549,8 +549,8 @@ The `_embed` type takes a URL of a service to generate a preview of the URL you 
 
 #### Validation
 
-| Property | Required | Values|
-|:--|:--|
+| Property | Required | Values |
+|:--|:--|:--|
 | url | required | `string` |
 | caption | optional | `string` or a `fragment` array |
 
@@ -574,7 +574,7 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 #### Validation
 
 | Property | Required | Values|
-|:--|:--|
+|:--|:--|:--|
 | url | required | `string` |
 | title | required | `string` |
 | description | optional | `string` |
