@@ -442,7 +442,7 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 
 #### Validation
 | Property | Value | Description|
-|:--|:--|
+|:---|:---|
 | `_table` | Supports `_tableCaption`, `_tableHeader` and `_tableBody`  | Provides the wrapping type for a table |
 | `_tableCaption` | Can be either a `string` or a `fragment` array.| Defines a the table caption `<caption>` in HTML |
 | `_tableHeader` | Supports `_tableRow` | Provides the definition of a `<thead>` element in HTML |
