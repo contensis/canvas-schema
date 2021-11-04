@@ -6,7 +6,8 @@ authors:
 	- Dan White
 ---
 
-# Contensis canvas specification  
+# Contensis canvas specification
+
 **Version**: Working Draft
 
 ---
@@ -14,6 +15,7 @@ authors:
 {{TOC}}
 
 ## Description
+
 ## Terminology
 
 | Term | Definition |
@@ -23,11 +25,10 @@ authors:
 | Decorators | Array |
 | Properties | Any metadata that describes the type and can be used to set the rendering intent in the Canvas editor or when consumed via the API. |
 
+## Standard _types
 
+### _paragraph
 
-## Supported _types
-
-### _paragraph 
 The `_paragraph` type represents a standard block of text, either as plain text or formatted text using fragments and decorators. A `_paragraph` can be either a `string` or a `fragment` array.
 
 #### Properties
@@ -37,6 +38,7 @@ The `_paragraph` type represents a standard block of text, either as plain text 
 | paragraphType | none (default), lede |
 
 #### Validation
+
 **Lede** – there can only be a single lede paragraph in a canvas.
 
 #### Examples
@@ -235,10 +237,12 @@ This is a lede paragraph
 ```
 
 ---
-### _heading
-A `_heading` represents a block of text that is used as a section header, it has a `level` property to set the hierarchy of the header. A `_heading` can be either a `string` or a `fragment` array.
 
+### _heading
+
+A `_heading` represents a block of text that is used as a section header, it has a `level` property to set the hierarchy of the header. A `_heading` can be either a `string` or a `fragment` array.
 #### Properties
+
 | Property | Value |
 |:--|:--|
 | level | 1 (default), 2, 3, 4, 5, 6 |
@@ -262,7 +266,6 @@ A `_heading` represents a block of text that is used as a section header, it has
   }
 }
 ```
-
 
 ##### Heading with inline styles
 
@@ -301,9 +304,11 @@ A `_heading` represents a block of text that is used as a section header, it has
 ---
 
 ### _list
+
 A `_list` represents a flat or nested list of content. Each item in a list is represented by a `_listItem` type. A `_listItem` can be either a `string` or a `fragment` array.
 
 #### Properties
+
 | Property | Value |
 |:--|:--|
 | listType | unordered (default), ordered |
@@ -412,9 +417,11 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 ---
 
 ### _code
+
 The `_code` type represents a code example, with an optional `language` property which controls how the code should be displayed at render.
 
 #### Properties
+
 | Property | Value |
 |:--|:--|
 | language | list of language names supported by [prism](https://prismjs.com/#supported-languages) or similar FE framework |
@@ -438,9 +445,11 @@ The `_code` type represents a code example, with an optional `language` property
 ---
 
 ### _table
+
 The `_table` type represents a table of data, a `_table` is broken up into a table caption (`_tableCaption`) table header (`_tableHeader`) and a table body (`_tableBody`), which in turn contains table rows (`_tableRow`) of which support table header cells (`_tableHeaderCell`) and table cells (`_tableCell`).
 
 #### Validation
+
 | Property | Value | Description|
 |:--|:--|:--|
 | `_table` | Supports `_tableCaption`, `_tableHeader` and `_tableBody`  | Provides the wrapping type for a table |
@@ -450,7 +459,6 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 | `_tableRow` | Supports `_tableCell` and `_tableHeaderCell`| Defines a row of data in the table `<tr>` in HTML |
 | `_tableCell` | Can be either a `string` or a `fragment` array.| Defines a the data of a cell `<td>` in HTML |
 | `_tableHeaderCell` | Can be either a `string` or a `fragment` array.| Defines a the cell header `<th>` in HTML |
-
 
 #### Example
 
@@ -517,7 +525,85 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 }
 ```
 
-### Panel
+### _quote
+
+The `_quote` type represents a quotation with an optional source and citation.
+
+#### Validation
+
+| Property | Value |
+|:--|:--|
+| text | required |
+| source | optional, required |
+| citation | optional |
+
+#### Example
+
+**Status**: ✅ Approved
+
+```json
+{
+  "type": "_quote",
+  "value": {
+      "text": "Stay hungry stay foolish",
+      "source": "Steve Jobs",
+      "citation": "https://www.apple.com/stevejobs/"
+    }
+}
+```
+
+---
+
+### _divider
+
+The `_divider` type defines a dividing break in content, usually rendered as a form of horizontal rule. 
+
+#### Example
+
+**Status**: ✅ Approved
+
+```json
+{
+  "type": "_divider"
+  "value": null // could be removed??
+}
+```
+
+> Ideally `value` should not be present but this currently aligns with our composed item definition of type, value pairs.
+
+---
+
+### _externalImage
+
+The `_externalImage` type represents an image being served from an external URL e.g. hot linking to an image from Unsplash, rather than being served from the CMS.
+
+#### Validation
+
+| Property | Value |
+|:--|:--|
+| url | required |
+| caption | optional |
+| altText | optional, required, decorative |
+
+#### Example
+
+**Status**: ✅ Approved
+
+```json
+{
+  "type": "_externalImage",
+  "value": {
+    "url": "https://unsplash.com/photos/TYQ6fyF3Amc",
+    "caption": "Photo by Jimmy Dean on Unsplash",
+    "altText": "Man in white and orange long sleeve shirt holding chopsticks"
+  }
+}
+```
+
+---
+
+### _panel
+
 The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message and a `panelType` property to determine its visual style / emphasis type.
 
 #### Validation
@@ -529,6 +615,8 @@ The `_panel` type represents a block of text which is emphasised in a document t
 | panelType | required | info (default), note, warning, positive, warning, info |
 
 #### Example
+
+**Status**: ✅ Approved
 
 ```json
 {
@@ -543,7 +631,7 @@ The `_panel` type represents a block of text which is emphasised in a document t
 
 ---
 
-### Embed
+### _embed
 
 The `_embed` type takes a URL of a service to generate a preview of the URL you pasted and can contain an optional `caption`. 
 
@@ -555,6 +643,9 @@ The `_embed` type takes a URL of a service to generate a preview of the URL you 
 | caption | optional | `string` or a `fragment` array |
 
 #### Example
+
+**Status**: ✅ Approved
+
 ```json
 {
   "type": "_embed",
@@ -567,7 +658,7 @@ The `_embed` type takes a URL of a service to generate a preview of the URL you 
 
 ---
 
-### Bookmark
+### _bookmark
 
 The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph](https://ogp.me/) metadata from the pasted URL.
 
@@ -581,6 +672,9 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 | imageUrl | optional | `string` |
 
 #### Example
+
+**Status**: ✅ Approved
+
 ```json
 {
   "type": "_bookmark",
@@ -595,37 +689,86 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 
 ---
 
-### Component
+## Contensis specific _types
 
----
+### _image
 
-### Quote
-
----
-
-### Image
-
----
-
-### External image
-The `_externalImage` type represents an image being served from an external URL e.g. hot linking to an image from Unsplash, rather than being served from the CMS.
-
-#### Validation
-
-| Property | Value |
-|:--|:--|
-| url | required |
-| caption | optional |
-| altText | optional, required, decorative |
+This take the existing Contensis format of image into an `_image` type, and keeps the contents the same as a CMS image today.
 
 #### Example
+
+**Status**: ⚠️ Needs further discussion
+
+
 ```json
 {
-  "type": "_externalImage",
+  "type": "_image",
   "value": {
-    "url": "https://unsplash.com/photos/TYQ6fyF3Amc",
-    "caption": "Photo by Jimmy Dean on Unsplash",
-    "altText": "Man in white and orange long sleeve shirt holding chopsticks"
+    "asset": { AS PER CURRENT FORMAT },
+    "caption": "A VW Beetle at the quayside",
+    "altText": "beetle at the quayside",
+    "transformations": null
+  }
+}
+```
+
+---
+
+### _imageArray
+
+The `_imageArray` type represents a group of images defined by the _asset type. Assets follow their existing structure.
+
+#### Example
+
+**Status**: ⚠️ Needs further discussion
+
+```json
+{
+  "type": "_imageArray",
+  "value": [{
+     "_asset": {
+        "altText": "An example image",
+        "sys": { Existing definition},
+      "caption": "",
+      "altText": "Image one",
+      "transformations": null
+    },
+    "_asset": {
+        "altText": "An example image",
+        "sys": { Existing definition},
+      "caption": "",
+      "altText": "Image two",
+      "transformations": null
+    },
+    "_asset": {
+        "altText": "An example image",
+        "sys": { Existing definition},
+      "caption": "",
+      "altText": "Image three",
+      "transformations": null
+    },
+  }]
+}
+```
+
+---
+
+### _component
+
+The `_component` type represents an existing Contensis component making the Canvas extendable beyond the standard types. Its definition is defined by it's existing structure.
+
+#### Example
+
+**Status**: ⚠️ Needs further discussion
+
+```json
+{
+  "type": "_component",
+  "value": {
+    THIS WOULD BE THE COMPONENT IN CONTENSIS TODAY
+  },
+  "properties": {
+    "componentId": "address"
   }
 }
 ```
@@ -633,12 +776,307 @@ The `_externalImage` type represents an image being served from an external URL 
 ---
 
 ## _type rules
+
 - When the value is a simple string without any decorators there is no reason to store them as arrays of fragments (This make it easier to read and reduces the storage required)
 
 ## Decorators
 
+Decorators are applied to `_fragments` to describe and define the text to give it richness. Decorators are defined as arrays within the properties object of a `_fragment`.
 
+### Supported decorators
 
+#### strong
+
+Strong is used to define text with strong importance. Typically used to give text a bold appearance.
+
+```md
+**Important** Make sure you wear safety goggles.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "Important",
+      "properties": {
+        "decorators": ["strong"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": "Make sure you wear safety goggles"
+    }
+  ]
+}
+```
+
+#### emphasis
+
+Emphasis is used to stress emphasis. Typically used to give text an italic appearance.
+
+```md
+This is _not_ a drill.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This is "
+    },
+    {
+      "type": "_fragment",
+      "value": "not",
+      "properties": {
+        "decorators": ["emphasis"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " a drill"
+    }
+  ]
+}
+```
+
+#### underline (deprecate?)
+
+#### strikethrough
+
+Strikethrough represent things that are no longer relevant or no longer accurate.
+
+```md
+My favourite species of ~~flamingo is the Lesser flamingo Andean flamingo~~ Chilean flamingo.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "My favourite species of flamingo is the "
+    },
+    {
+      "type": "_fragment",
+      "value": "Lesser flamingo Andean flamingo",
+      "properties": {
+        "decorators": ["strikethrough"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " Chilean flamingo."
+    }
+  ]
+}
+```
+
+#### subscript
+
+```md
+Almost every developer's favourite molecule is C~8~H~10~N~4~O~2~, also known as "caffeine."
+```
+
+```json
+[
+    {
+      "type": "_paragraph",
+      "value": [
+        {
+          "type": "_fragment",
+          "value": "Almost every developer's favourite molecule is C"
+        },
+        {
+          "type": "_fragment",
+          "value": "8",
+          "properties": {
+            "decorators": [
+              "subscript"
+            ]
+          }
+        },
+        {
+          "type": "_fragment",
+          "value": "H"
+        },
+        {
+          "type": "_fragment",
+          "value": "10",
+          "properties": {
+            "decorators": [
+              "subscript"
+            ]
+          }
+        },
+        {
+          "type": "_fragment",
+          "value": "N"
+        },
+        {
+          "type": "_fragment",
+          "value": "4",
+          "properties": {
+            "decorators": [
+              "subscript"
+            ]
+          }
+        },
+        {
+          "type": "_fragment",
+          "value": "O"
+        },
+        {
+          "type": "_fragment",
+          "value": "2",
+          "properties": {
+            "decorators": [
+              "subscript"
+            ]
+          }
+        },
+        {
+          "type": "_fragment",
+          "value": ", also known as \"caffeine\"."
+        }
+      ]
+    }
+  ]
+```
+
+#### superscript
+
+```md
+H^2^O
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "H"
+    },
+    {
+      "type": "_fragment",
+      "value": "2",
+      "properties": {
+        "decorators": ["superscript"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": "O"
+    }
+  ]
+}
+```
+
+#### mark
+
+Represents text which is marked or highlighted for reference or notation purposes
+
+```md
+Several species of <mark>salamander</mark> inhabit the temperate rainforest of the Pacific Northwest.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "Several species of "
+    },
+    {
+      "type": "_fragment",
+      "value": "salamander",
+      "properties": {
+        "decorators": [
+          "mark"
+        ]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " inhabit the temperate rainforest of the Pacific Northwest."
+    }
+  ]
+}
+```
+
+#### code
+
+The code decorator indicates that the text is a short fragment of computer code.
+
+```md
+The `.header` class defines the CSS selector to style the header component. 
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "The "
+    },
+    {
+      "type": "_fragment",
+      "value": ".header",
+      "properties": {
+        "decorators": ["code"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " class defines the CSS selector to style the header component. "
+    }
+  ]
+}
+```
+
+#### keyboard
+
+The keyboard decorator indicates a fragment of text denoting textual user input from a keyboard.
+
+```md
+Press ===Ctrl+Shift+C=== to mark the selection as inline code
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "Press "
+    },
+    {
+      "type": "_fragment",
+      "value": "Ctrl+Shift+C",
+      "properties": {
+        "decorators": ["keyboard"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " to mark the selection as inline code"
+    }
+  ]
+}
+```
+
+#### variable
+#### insert
+#### delete
+#### _links
+#### _comment
 
 ## Further discussion / comments
 
@@ -648,3 +1086,4 @@ The `_externalImage` type represents an image being served from an external URL 
 4. I changed the decorators from `strong` | `emphasis` to `bold` | `italic` and then back again, as bold and italic refer to more visual styling than describing the intent of the formatting.
 5. I've added `_tableCaption` to our table definition as we should support accessible tables from the outset.
 6. Should `_tableCells` support both `string` and `fragments`
+7. Should we change remove underline decorator, the `<u>` element should not be used to format `underlined` text in HTML and doing so in the Canvas may suggest that is correct understanding of the `<u>` element as per [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
