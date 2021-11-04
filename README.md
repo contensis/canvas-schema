@@ -25,6 +25,8 @@ authors:
 
 ## Supported types
 
+[_paragraph_](.../blob/main/standard-types.md#_paragraph)
+
 ### _type rules
 
 - When the value is a simple string without any decorators there is no reason to store them as arrays of fragments (This make it easier to read and reduces the storage required)
