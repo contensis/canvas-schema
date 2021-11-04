@@ -25,7 +25,9 @@ authors:
 
 ## Supported types
 
-[_paragraph_](.../blob/main/standard-types.md#_paragraph)
+[_paragraph](standard-types.md#_paragraph)
+[_paragraph](standard-types.md#_paragraph)
+
 
 ### _type rules
 
