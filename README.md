@@ -781,7 +781,7 @@ The `_component` type represents an existing Contensis component making the Canv
 
 ## Decorators
 
-Decorators are applied to `_fragments` to describe and define the text to give it richness. Decorators are defined as arrays within the properties object of a `_fragment`.
+Decorators are applied to `_fragments` to describe and define the text to give it richness. Decorators are defined as arrays within the properties object of a `_fragment`. Decorators can be paired with their own property object to extend their definition. As seen in the link decorator.
 
 ### Supported decorators
 
@@ -1126,9 +1126,84 @@ The volume of a box is <var>l</var> × <var>w</var> × <var>h</var>
 ```
 
 #### insert
+
+The `insert` decorator represents a `_fragment` that has been added to a document.
+
+```md
+<ins>This sentence has been added.</ins>
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This sentence has been added.",
+      "properties": {
+        "decorators": ["insert"]
+      }
+    }
+  ]
+}
+```
+
 #### delete
-#### _links
-#### _comment
+
+The `delete` decorator represents a `_fragment` that has been deleted from a document.
+
+```md
+<ins>This sentence has been deleted.</ins>
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This sentence has been deleted.",
+      "properties": {
+        "decorators": ["delete"]
+      }
+    }
+  ]
+}
+```
+
+#### link
+
+The `link` decorator is composed of two parts. It contains the decorator property of `link`, but is also paired with is own link object attached to the properties object of the `_fragment` to include elements such as the link URL.
+
+```md
+This is a [link](https://www.bbc.co.uk) to the BBC.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This is a "
+    },
+    {
+      "type": "_fragment",
+      "value": "link",
+      "properties": {
+        "link": {
+          "url": "https://www.bbc.co.uk"
+        },
+        "decorators": ["link"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " to the BBC"
+    }
+  ]
+}
+```
 
 ## Further discussion / comments
 
