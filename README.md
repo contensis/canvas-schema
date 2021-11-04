@@ -787,7 +787,7 @@ Decorators are applied to `_fragments` to describe and define the text to give i
 
 #### strong
 
-Strong is used to define text with strong importance. Typically used to give text a bold appearance.
+The `strong` decorator is used to define text with strong importance. Typically used to give text a bold appearance.
 
 ```md
 **Important** Make sure you wear safety goggles.
@@ -814,7 +814,7 @@ Strong is used to define text with strong importance. Typically used to give tex
 
 #### emphasis
 
-Emphasis is used to stress emphasis. Typically used to give text an italic appearance.
+The `emphasis` decorator is used to stress emphasis. Typically used to give text an italic appearance.
 
 ```md
 This is _not_ a drill.
@@ -847,7 +847,7 @@ This is _not_ a drill.
 
 #### strikethrough
 
-Strikethrough represent things that are no longer relevant or no longer accurate.
+The `strikethrough` decorator represents a `_fragment` that is no longer relevant or no longer accurate.
 
 ```md
 My favourite species of ~~flamingo is the Lesser flamingo Andean flamingo~~ Chilean flamingo.
@@ -877,6 +877,8 @@ My favourite species of ~~flamingo is the Lesser flamingo Andean flamingo~~ Chil
 ```
 
 #### subscript
+
+The `subscript` decorator specifies a `_fragment` that is to be displayed as subscript solely for typographical reasons.
 
 ```md
 Almost every developer's favourite molecule is C~8~H~10~N~4~O~2~, also known as "caffeine."
@@ -950,6 +952,8 @@ Almost every developer's favourite molecule is C~8~H~10~N~4~O~2~, also known as 
 
 #### superscript
 
+The `superscript` decorator specifies a `_fragment` that is to be displayed as superscript solely for typographical reasons.
+
 ```md
 H^2^O
 ```
@@ -979,7 +983,7 @@ H^2^O
 
 #### mark
 
-Represents text which is marked or highlighted for reference or notation purposes
+The `mark` decorator represents a `_fragment` which is marked or highlighted for reference or notation purposes.
 
 ```md
 Several species of <mark>salamander</mark> inhabit the temperate rainforest of the Pacific Northwest.
@@ -1012,7 +1016,7 @@ Several species of <mark>salamander</mark> inhabit the temperate rainforest of t
 
 #### code
 
-The code decorator indicates that the text is a short fragment of computer code.
+The `code` decorator indicates that the `_fragment` is a short piece of computer code.
 
 ```md
 The `.header` class defines the CSS selector to style the header component. 
@@ -1043,7 +1047,7 @@ The `.header` class defines the CSS selector to style the header component.
 
 #### keyboard
 
-The keyboard decorator indicates a fragment of text denoting textual user input from a keyboard.
+The `keyboard` decorator indicates a `_fragment` denoting textual user input from a keyboard.
 
 ```md
 Press ===Ctrl+Shift+C=== to mark the selection as inline code
@@ -1073,6 +1077,54 @@ Press ===Ctrl+Shift+C=== to mark the selection as inline code
 ```
 
 #### variable
+
+The `variable` decorator represents the name of a variable in a mathematical expression or a programming context.
+
+```md
+The volume of a box is <var>l</var> × <var>w</var> × <var>h</var>
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "The volume of a box is "
+    },
+    {
+      "type": "_fragment",
+      "value": "l",
+      "properties": {
+        "decorators": ["variable"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " × "
+    },
+    {
+      "type": "_fragment",
+      "value": "w",
+      "properties": {
+        "decorators": ["variable"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " × "
+    },
+    {
+      "type": "_fragment",
+      "value": "h",
+      "properties": {
+        "decorators": ["variable"]
+      }
+    }
+  ]
+}
+```
+
 #### insert
 #### delete
 #### _links
