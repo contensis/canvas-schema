@@ -1,11 +1,3 @@
----
-version: Working draft
-authors:
-	- Scott Yearsley
-	- Richard Saunders
-	- Dan White
----
-
 # Contensis canvas specification
 
 **Version**: Working Draft
