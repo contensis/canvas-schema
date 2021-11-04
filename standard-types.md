@@ -18,8 +18,6 @@ The `_paragraph` type represents a standard block of text, either as plain text 
 
 #### Plain text paragraph
 
-**Status**: ✅ Approved
-
 ```md
 This is a paragraph
 ```
@@ -32,8 +30,6 @@ This is a paragraph
 ```
 
 #### Paragraph with text formatting
-
-**Status**: ✅ Approved
 
 ```md
 This is some **bold** _text_
@@ -71,8 +67,6 @@ This is some **bold** _text_
 
 #### Paragraph with link
 
-**Status**: ✅ Approved
-
 ```md
 Check out our latest [Boston Fern](https://www.leif.com/plants/boston-fern) plant
 ```
@@ -104,8 +98,6 @@ Check out our latest [Boston Fern](https://www.leif.com/plants/boston-fern) plan
 ```
 
 #### Paragraph with separated inline styles
-
-**Status**: ✅ Approved
 
 ```md
 This is some **bold** **text**
@@ -144,8 +136,6 @@ This is some **bold** **text**
 > **Note:** If the space is deleted between the two fragments in this instance then the fragments will be merged.
 
 #### Paragraph with nested fragments
-
-**Status**: ✅ Approved
 
 ```md
 This is a sentence that **has a [link](https://www.contensis.com) that is bold**
@@ -191,8 +181,6 @@ This is a sentence that **has a [link](https://www.contensis.com) that is bold**
 
 #### Lede paragraph
 
-**Status**: ✅ Approved
-
 Represents a lede introductory paragraph.
 
 ```md
@@ -214,6 +202,7 @@ This is a lede paragraph
 ## _heading
 
 A `_heading` represents a block of text that is used as a section header, it has a `level` property to set the hierarchy of the header. A `_heading` can be either a `string` or a `fragment` array.
+
 ### Properties
 
 | Property | Value |
@@ -223,8 +212,6 @@ A `_heading` represents a block of text that is used as a section header, it has
 ### Examples
 
 #### Simple heading
-
-**Status**: ✅ Approved
 
 ```md
 # This is my heading
@@ -241,8 +228,6 @@ A `_heading` represents a block of text that is used as a section header, it has
 ```
 
 #### Heading with inline styles
-
-**Status**: ✅ Approved
 
 ```md
 # This *is* my heading
@@ -289,8 +274,6 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 ### Examples
 
 #### Unordered list
-
-**Status**: ✅ Approved
 
 ```md
 - **_List item one_**
@@ -339,8 +322,6 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 ```
 
 #### Ordered list
-
-**Status**: ✅ Approved
 
 ```md
 1. **_List item one_**
@@ -401,8 +382,6 @@ The `_code` type represents a code example, with an optional `language` property
 
 ### Example
 
-**Status**: ✅ Approved
-
 > We took this approach on Code, to be consistent with our headings, paragraph and lists which use properties to control its display type.
 
 ```json
@@ -434,8 +413,6 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 | `_tableHeaderCell` | Can be either a `string` or a `fragment` array.| Defines a the cell header `<th>` in HTML |
 
 ### Example
-
-**Status**: ⚠️ Needs further discussion
 
 ```json
 {
@@ -512,8 +489,6 @@ The `_quote` type represents a quotation with an optional source and citation.
 
 ### Example
 
-**Status**: ✅ Approved
-
 ```json
 {
   "type": "_quote",
@@ -532,8 +507,6 @@ The `_quote` type represents a quotation with an optional source and citation.
 The `_divider` type defines a dividing break in content, usually rendered as a form of horizontal rule. 
 
 ### Example
-
-**Status**: ✅ Approved
 
 ```json
 {
@@ -559,8 +532,6 @@ The `_externalImage` type represents an image being served from an external URL 
 | altText | optional, required, decorative |
 
 ### Example
-
-**Status**: ✅ Approved
 
 ```json
 {
@@ -589,8 +560,6 @@ The `_panel` type represents a block of text which is emphasised in a document t
 
 ### Example
 
-**Status**: ✅ Approved
-
 ```json
 {
   "type": "_panel",
@@ -616,8 +585,6 @@ The `_embed` type takes a URL of a service to generate a preview of the URL you 
 | caption | optional | `string` or a `fragment` array |
 
 ### Example
-
-**Status**: ✅ Approved
 
 ```json
 {
@@ -645,8 +612,6 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 | imageUrl | optional | `string` |
 
 ### Example
-
-**Status**: ✅ Approved
 
 ```json
 {
