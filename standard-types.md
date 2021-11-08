@@ -393,7 +393,6 @@ The `_code` type represents a code example, with an optional `language` property
   }
 }
 ```
-[What languages do we want to validate against](https://github.com/contensis/canvas-schema/issues/2)
 
 ***
 
