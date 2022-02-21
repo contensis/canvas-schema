@@ -65,3 +65,4 @@ Decorators are applied to `_fragment`s to describe and define the text to give i
 | [insert](decorators.md#insert)| :white_check_mark: Approved |
 | [delete](decorators.md#delete)| :white_check_mark: Approved |
 | [link](decorators.md#link)| :warning: Needs discussion |
+| [anchor](decorators.md#anchor)| :warning: Needs discussion |
