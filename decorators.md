@@ -421,3 +421,37 @@ This is a [link](https://www.bbc.co.uk) to the BBC.
   ]
 }
 ```
+
+### anchor
+
+The `anchor` decorator is composed of two parts. It contains the decorator property of `anchor`, but is also paired with is own link object attached to the properties object of the `_fragment` to include elements such as the link URL.
+
+```md
+This is an [anchor](#my-heading-anchor) in the middle of a paragraph.
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This is an "
+    },
+    {
+      "type": "_fragment",
+      "value": "anchor",
+      "properties": {
+        "anchor": {
+          "id": "#my-heading-anchor"
+        },
+        "decorators": ["anchor"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": " to the BBC"
+    }
+  ]
+}
+```
