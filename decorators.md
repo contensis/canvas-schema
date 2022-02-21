@@ -450,7 +450,7 @@ This is an [anchor](#my-heading-anchor) in the middle of a paragraph.
     },
     {
       "type": "_fragment",
-      "value": " to the BBC"
+      "value": " in the middle of a paragraph."
     }
   ]
 }
