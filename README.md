@@ -32,7 +32,6 @@
 | [_table](standard-types.md#_table)| :warning: Needs discussion |
 | [_quote](standard-types.md#_quote)| :white_check_mark: Approved |
 | [_divider](standard-types.md#_divider)| :white_check_mark: Approved |
-| [_externalImage](standard-types.md#_externalImage)| :white_check_mark: Approved |
 | [_panel](standard-types.md#_panel)| :white_check_mark: Approved |
 | [_embed](standard-types.md#_embed)| :white_check_mark: Approved |
 | [_bookmark](standard-types.md#_bookmark)| :white_check_mark: Approved |
@@ -41,7 +40,7 @@
 
 | Type | Status |
 |:--|:--|
-| [_image](contensis-types.md#_image)| :warning: Needs discussion |
+| [_image](contensis-types.md#_image)| :white_check_mark: Approved |
 | [_imageArray](contensis-types.md#_imageArray)| :warning: Needs discussion |
 | [_component](contensis-types.md#_component)| :warning: Needs discussion |
 
