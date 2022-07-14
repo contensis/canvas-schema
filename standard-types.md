@@ -519,33 +519,6 @@ The `_divider` type defines a dividing break in content, usually rendered as a f
 
 ***
 
-## _externalImage
-
-The `_externalImage` type represents an image being served from an external URL e.g. hot linking to an image from Unsplash, rather than being served from the CMS.
-
-### Validation
-
-| Property | Value |
-|:--|:--|
-| url | required |
-| caption | optional |
-| altText | optional, required, decorative |
-
-### Example
-
-```json
-{
-  "type": "_externalImage",
-  "value": {
-    "url": "https://unsplash.com/photos/TYQ6fyF3Amc",
-    "caption": "Photo by Jimmy Dean on Unsplash",
-    "altText": "Man in white and orange long sleeve shirt holding chopsticks"
-  }
-}
-```
-
-***
-
 ## _panel
 
 The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message and a `panelType` property to determine its visual style / emphasis type.
