@@ -4,20 +4,129 @@
 
 This take the existing Contensis format of image into an `_image` type, and keeps the contents the same as a CMS image today.
 
-### Example
+### Examples
 
-**Status**: ⚠️ Needs further discussion
+#### Management API: External URL
+
+```json
+    {
+        "type": "_image",
+        "value": {
+            "url": "http://www.bbc.co.uk/images/boris_johnson.jpg",
+            "altText": "Boris Johnson",
+            "caption": "Boris Johnson resigns as PM"
+        }
+    }
+ ```
+ 
+#### Management API: CMS Image
+
+```json 
+ {
+        "type": "_image",
+        "value": {
+            "asset": {
+                "sys": {
+                    "id": "e57979ef-2b86-45e3-8d37-1a744ba2ce7a"
+                }
+            },
+            "altText": "Boris Johnson",
+            "caption": "Boris Johnson resigns as PM",
+            "transformations": null
+        }
+    }
+```
+
+#### Management API: Cropped CMS Image
+```json 
+    {
+        "type": "_image",
+        "value": {
+            "asset": {
+                "sys": {
+                    "id": "e57979ef-2b86-45e3-8d37-1a744ba2ce7a"
+                }
+            },
+            "altText": "Boris Johnson",
+            "caption": "Boris Johnson resigns as PM",
+            "transformations": {
+                "size": {
+                    "width": 1266,
+                    "height": 844
+                },
+                "crop": {
+                    "width": 1141,
+                    "height": 765,
+                    "x": 73,
+                    "y": 39
+                }
+            }
+        }
+    }
+```
+
+#### Delivery API: External image
+
+```json
+
+    {
+        "type": "_image",
+        "value": {
+            "url": "http://www.bbc.co.uk/images/boris_johnson.jpg",
+            "altText": "Boris Johnson",
+            "caption": "Boris Johnson resigns as PM"
+        }
+    }
+```
+
+#### Delivery API: CMS image
+
+```json
+    {
+        "type": "_image",
+        "value": {
+            "url": "/images/boris_johnson.xe0fe632b.jpg",
+            "altText": "Boris Johnson",
+            "transformations": null,
+            "caption": "Boris Johnson resigns as PM",
+            "asset": {
+                "entryTitle": "boris_johnson",
+                "entryDescription": null,
+                "sys": {
+                    "id": "e57979ef-2b86-45e3-8d37-1a744ba2ce7a",
+                    "language": "en-GB",
+                    "contentTypeId": "image",
+                    "dataFormat": "asset",
+                    "uri": "/images/boris_johnson.xe0fe632b.jpg"
+                }
+            }
+        }
+    }
+```
+
+#### Delivery API: Cropped CMS Image
 
 ```json
 {
-  "type": "_image",
-  "value": {
-    "asset": { AS PER CURRENT FORMAT },
-    "caption": "A VW Beetle at the quayside",
-    "altText": "beetle at the quayside",
-    "transformations": null
-  }
-}
+        "type": "_image",
+        "value": {
+            "url": "/images/boris_johnson.xe0fe632b.jpg?w=1266&h=844&crop=1141,765,73,39",
+            "altText": "Boris Johnson",
+            "transformations": "w=1266&h=844&crop=1141,765,73,39",
+            "caption": "Boris Johnson resigns as PM",
+            "asset": {
+                "entryTitle": "boris_johnson",
+                "entryDescription": null,
+                "sys": {
+                    "id": "e57979ef-2b86-45e3-8d37-1a744ba2ce7a",
+                    "language": "en-GB",
+                    "contentTypeId": "image",
+                    "dataFormat": "asset",
+                    "uri": "/images/boris_johnson.xe0fe632b.jpg?w=1266&h=844&crop=1141,765,73,39"
+                }
+            }
+        }
+    }
 ```
 
 ***
