@@ -529,7 +529,7 @@ The `_panel` type represents a block of text which is emphasised in a document t
 |:--|:--|:--|
 | title | optional | `string` |
 | message | required | `string` or a `fragment` array |
-| panelType | required | info (default), note, warning, positive, warning, info |
+| panelType | required | info (default), note, warning, success, error |
 
 ### Example
 
