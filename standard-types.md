@@ -539,7 +539,7 @@ The `_panel` type represents a block of text which is emphasised in a document t
   "value": {
     "title": "Heading",
     "message": "This is a call out message",
-    "panelType": "note | warning | positive | negative | info"
+    "panelType": "info | note | warning | success | error"
   },
 }
 ```
