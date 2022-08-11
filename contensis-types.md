@@ -2,7 +2,7 @@
 
 ## _image
 
-This take the existing Contensis format of image into an `_image` type, and keeps the contents the same as a CMS image today.
+This takes the existing Contensis format of image into an `_image` type, and keeps the contents the same as a CMS image today.
 
 ### Examples
 
