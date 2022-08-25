@@ -544,6 +544,19 @@ The `_panel` type represents a block of text which is emphasised in a document t
 }
 ```
 
+TODO: Panel with message array of fragments
+
+```json
+{
+  "type": "_panel",
+  "value": {
+    "title": "Heading",
+    "message": "This is a call out message",
+    "panelType": "info | note | warning | success | error"
+  },
+}
+```
+
 ***
 
 ## _embed
