@@ -138,7 +138,7 @@ This is some **bold** **text**
 #### Paragraph with nested fragments
 
 ```md
-This is a sentence that **has a [link](https://www.contensis.com) that is bold**
+This is a sentence that **has a link to the [bbc](https://www.bbc.co.uk) that is bold**
 ```
 
 ```json
@@ -158,7 +158,7 @@ This is a sentence that **has a [link](https://www.contensis.com) that is bold**
         },
         {
           "type": "_fragment",
-          "value": "link",
+          "value": "bbc",
           "properties": {
             "link": {
               "url": "https://www.bbc.co.uk"
