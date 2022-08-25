@@ -374,9 +374,8 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 
 The `_code` type represents a code example, with an optional `language` property which controls how the code should be displayed at render.
 
-### Properties
 
-| Property | Value |
+
 |:--|:--|
 | language | list of language names supported by [prism](https://prismjs.com/#supported-languages) or similar FE framework |
 | caption | an optional caption for the code snippet |
@@ -389,8 +388,8 @@ The `_code` type represents a code example, with an optional `language` property
 ```json
 {
   "type": "_code",
-  "value": "console.log(\"hello world\");",
-  "properties": {
+  "value": {
+    "code": "console.log(\"hello world\");",
     "language": "javascript"
     "caption": "Hello World shown in JavaScript"
   }
@@ -495,11 +494,11 @@ The `_quote` type represents a quotation with an optional source and citation.
 ```json
 {
   "type": "_quote",
-  "value": {
-      "text": "Stay hungry stay foolish",
+  "value": "Stay hungry stay foolish",
+  "properties": {
       "source": "Steve Jobs",
       "citation": "https://www.apple.com/stevejobs/"
-    }
+   }
 }
 ```
 
@@ -515,6 +514,16 @@ The `_divider` type defines a dividing break in content, usually rendered as a f
 {
   "type": "_divider"
   "value": null // could be removed??
+}
+```
+
+
+```json
+{
+  "type": "_divider"
+  "value": {
+    "style": "dashed",
+  }
 }
 ```
 
@@ -539,27 +548,13 @@ The `_panel` type represents a block of text which is emphasised in a document t
 ```json
 {
   "type": "_panel",
-  "value": {
+  "value": "This is a call out message",
+  "properties": {
     "title": "Heading",
-    "message": "This is a call out message",
     "panelType": "info | note | warning | success | error"
   },
 }
 ```
-
-TODO: Panel with message array of fragments
-
-```json
-{
-  "type": "_panel",
-  "value": {
-    "title": "Heading",
-    "message": "This is a call out message",
-    "panelType": "info | note | warning | success | error"
-  },
-}
-```
-
 ***
 
 ## _embed
