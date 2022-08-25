@@ -13,13 +13,15 @@
 | _types | String |
 | Fragments | Array |
 | Decorators | Array |
-| Properties | Any metadata that describes the type and can be used to set the rendering intent in the Canvas editor or when consumed via the API. |
+| Properties | Additional attributes of a `_type` that describe or enhance the primary value of the type. e.g. A title enhances primary message of a `_panel`, a source enhances a `_quote`. |
+| id/uuid | string, representing the unique value or key of single piece of content within a Canvas. |
 
 ## Supported types
 
 ### _type rules
 
-- When the value is a simple string without any decorators there is no reason to store them as arrays of fragments (This make it easier to read and reduces the storage required)
+- When the `value` of a `_type` can be styled with decorator, then any additional attributes of that type are defined as properties.
+- When the `value` of a `_type` that supports decorators is not styled, then the value is stored as a simple string. This makes it easier to read and reduces the storage required.
 
 ### Standard types
 
@@ -28,8 +30,8 @@
 | [_paragraph](standard-types.md#_paragraph)| :white_check_mark: Approved |
 | [_heading](standard-types.md#_heading)| :white_check_mark: Approved |
 | [_list](standard-types.md#_list)| :white_check_mark: Approved |
-| [_code](standard-types.md#_code)| :warning: Needs discussion |
-| [_table](standard-types.md#_table)| :warning: Needs discussion |
+| [_code](standard-types.md#_code)| :white_check_mark: Approved |
+| [_table](standard-types.md#_table)| :white_check_mark: Approved |
 | [_quote](standard-types.md#_quote)| :white_check_mark: Approved |
 | [_divider](standard-types.md#_divider)| :white_check_mark: Approved |
 | [_panel](standard-types.md#_panel)| :white_check_mark: Approved |

@@ -138,7 +138,7 @@ This is some **bold** **text**
 #### Paragraph with nested fragments
 
 ```md
-This is a sentence that **has a link to the [bbc](https://www.bbc.co.uk) that is bold**
+This is a sentence that **has a link to the [BBC](https://www.bbc.co.uk) that is bold**
 ```
 
 ```json
@@ -158,7 +158,7 @@ This is a sentence that **has a link to the [bbc](https://www.bbc.co.uk) that is
         },
         {
           "type": "_fragment",
-          "value": "bbc",
+          "value": "BBC",
           "properties": {
             "link": {
               "url": "https://www.bbc.co.uk"
@@ -374,23 +374,19 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 
 The `_code` type represents a code example, with an optional `language` property which controls how the code should be displayed at render.
 
-
-
+| Property | Value |
 |:--|:--|
 | language | list of language names supported by [prism](https://prismjs.com/#supported-languages) or similar FE framework |
 | caption | an optional caption for the code snippet |
 
-
 ### Example
-
-> We took this approach on Code, to be consistent with our headings, paragraph and lists which use properties to control its display type.
 
 ```json
 {
   "type": "_code",
   "value": {
     "code": "console.log(\"hello world\");",
-    "language": "javascript"
+    "language": "javascript",
     "caption": "Hello World shown in JavaScript"
   }
 }
@@ -479,13 +475,13 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 
 ## _quote
 
-The `_quote` type represents a quotation with an optional source and citation.
+The `_quote` type represents a quotation with an optional source and citation properties. A `_quote_` can be either a `string` or a `fragment` array.
 
 ### Validation
 
 | Property | Value |
 |:--|:--|
-| text | required |
+| value |  Can be either a `string` or a `fragment` array, required |
 | source | optional, required |
 | citation | optional |
 
@@ -506,41 +502,42 @@ The `_quote` type represents a quotation with an optional source and citation.
 
 ## _divider
 
-The `_divider` type defines a dividing break in content, usually rendered as a form of horizontal rule. 
+The `_divider` type defines a dividing break in content, usually rendered as a form of horizontal rule, it does not have any value.
+
+| Property | Value |
+|:--|:--|
+| value |  Ideally `value` should not be present but this currently aligns with our composed item definition of type, value pairs.|
+| style | Reserved for future styles such as thin, thick, dashed or dotted. |
 
 ### Example
 
 ```json
 {
-  "type": "_divider"
-  "value": null // could be removed??
+  "type": "_divider",
 }
 ```
 
-
 ```json
 {
-  "type": "_divider"
+  "type": "_divider",
   "value": {
     "style": "dashed",
   }
 }
 ```
 
-> Ideally `value` should not be present but this currently aligns with our composed item definition of type, value pairs.
-
 ***
 
 ## _panel
 
-The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message and a `panelType` property to determine its visual style / emphasis type.
+The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message defined by its value, an optional `title` property and a `panelType` property to determine its visual style / emphasis type.
 
 ### Validation
 
 | Property | Required | Values |
 |:--|:--|:--|
+| value | required | `string` or a `fragment` array |
 | title | optional | `string` |
-| message | required | `string` or a `fragment` array |
 | panelType | required | info (default), note, warning, success, error |
 
 ### Example
@@ -555,6 +552,7 @@ The `_panel` type represents a block of text which is emphasised in a document t
   },
 }
 ```
+
 ***
 
 ## _embed

@@ -18,10 +18,10 @@ This takes the existing Contensis format of image into an `_image` type, and kee
         }
     }
  ```
- 
+
 #### Management API: CMS Image
 
-```json 
+```json
  {
         "type": "_image",
         "value": {
@@ -38,7 +38,8 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```
 
 #### Management API: Cropped CMS Image
-```json 
+
+```json
     {
         "type": "_image",
         "value": {
