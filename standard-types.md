@@ -379,6 +379,8 @@ The `_code` type represents a code example, with an optional `language` property
 | Property | Value |
 |:--|:--|
 | language | list of language names supported by [prism](https://prismjs.com/#supported-languages) or similar FE framework |
+| caption | an optional caption for the code snippet |
+
 
 ### Example
 
@@ -390,6 +392,7 @@ The `_code` type represents a code example, with an optional `language` property
   "value": "console.log(\"hello world\");",
   "properties": {
     "language": "javascript"
+    "caption": "Hello World shown in JavaScript"
   }
 }
 ```
