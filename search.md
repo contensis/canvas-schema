@@ -1,6 +1,6 @@
 # Search fields
 
-The following values of the canvas items described by the following tables should be searchable.
+The following values of the canvas items described by the following tables should be searchable when carrying out a freeText search.
 
 ## Standard types
 
