@@ -67,3 +67,7 @@ Decorators are applied to `_fragment`s to describe and define the text to give i
 | [delete](decorators.md#delete)| :white_check_mark: Approved |
 | [link](decorators.md#link)| :warning: Needs discussion |
 | [anchor](decorators.md#anchor)| :warning: Needs discussion |
+
+## Searchable data
+
+This [document](search.md) describes which data should be searchable by a freeText search of the avaliable canvas `_types`. 
