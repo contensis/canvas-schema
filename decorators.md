@@ -487,3 +487,59 @@ return has been added
   ]
 }
 ```
+
+### Comment
+
+The `comment` decorator can be applied to a `_fragment` or directly on a `_type` so that another user can respond or take action on a piece of content.
+
+#### Comment `_fragment` example
+
+```txt
+The capital of England is Cardiff.
+```
+
+In this example the word Cardiff is marked with a comment needing to be corrected by the author to London.
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "The capital of England is "
+    },
+    {
+      "type": "_fragment",
+      "value": "Cardiff",
+      "properties": {
+        "decorators": ["comment"],
+        "comment": {
+          "commentId": "0000-1234-5678-9101-1121",
+          "authorId": "BC12-1234-5678-9101-1121"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Comment `_type` example
+
+In this example the `_code` type has a comment added to it.
+
+```json
+{
+  "type": "_code",
+  "value": {
+    "code": "console.log(\"hello world\");",
+    "language": "javascript",
+    "caption": "Hello World shown in JavaScript"
+  },
+  "properties": {
+    "comment": {
+      "commentId": "0000-1234-5678-9101-1121",
+      "authorID": "BC12-1234-5678-9101-1121"
+    }
+  }
+}
+```
