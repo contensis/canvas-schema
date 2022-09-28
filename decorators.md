@@ -422,7 +422,7 @@ This is a [link](https://www.bbc.co.uk) to the BBC.
 }
 ```
 
-### anchor
+### Anchor
 
 The `anchor` decorator is composed of two parts. It contains the decorator property of `anchor`, but is also paired with is own anchor object attached to the properties object of the `_fragment` to include elements such as the ID.
 
@@ -451,6 +451,38 @@ This is an [anchor](#my-heading-anchor) in the middle of a paragraph.
     {
       "type": "_fragment",
       "value": " in the middle of a paragraph."
+    }
+  ]
+}
+```
+
+### linebreak
+
+The `linebreak` decorator represents a soft return in a paragraph of text.
+
+```txt
+This is a sentence and a soft
+return has been added
+```
+
+```json
+{
+  "type": "_paragraph",
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This is a sentence and a soft"
+    },
+    {
+      "type": "_fragment",
+      "value": " ", // this is a carriage return
+      "properties": {
+        "decorators": ["linebreak"]
+      }
+    },
+    {
+      "type": "_fragment",
+      "value": "return has been added"
     }
   ]
 }
