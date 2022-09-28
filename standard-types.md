@@ -545,14 +545,13 @@ The `_divider` type defines a dividing break in content, usually rendered as a f
 
 ## _panel
 
-The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It combines a message defined by its value, an optional `title` property and a `panelType` property to determine its visual style / emphasis type.
+The `_panel` type represents a block of text which is emphasised in a document to draw attention to the reader. It contains a message defined by its value and a `panelType` property to determine its visual style / emphasis type.
 
 ### Validation
 
 | Property | Required | Values |
 |:--|:--|:--|
 | value | required | `string` or a `fragment` array |
-| title | optional | `string` |
 | panelType | required | info (default), note, warning, success, error |
 
 ### Example
@@ -563,7 +562,6 @@ The `_panel` type represents a block of text which is emphasised in a document t
   "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
   "value": "This is a call out message",
   "properties": {
-    "title": "Heading",
     "panelType": "info | note | warning | success | error"
   },
 }
