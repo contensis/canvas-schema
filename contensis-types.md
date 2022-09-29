@@ -11,6 +11,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```json
     {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "url": "http://www.bbc.co.uk/images/boris_johnson.jpg",
             "altText": "Boris Johnson",
@@ -24,6 +25,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```json
  {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "asset": {
                 "sys": {
@@ -42,6 +44,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```json
     {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "asset": {
                 "sys": {
@@ -72,6 +75,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 
     {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "url": "http://www.bbc.co.uk/images/boris_johnson.jpg",
             "altText": "Boris Johnson",
@@ -85,6 +89,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```json
     {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "url": "/images/boris_johnson.xe0fe632b.jpg",
             "altText": "Boris Johnson",
@@ -110,6 +115,7 @@ This takes the existing Contensis format of image into an `_image` type, and kee
 ```json
 {
         "type": "_image",
+        "id": "gOZ4Mg", // Hashed GUID
         "value": {
             "url": "/images/boris_johnson.xe0fe632b.jpg?w=1266&h=844&crop=1141,765,73,39",
             "altText": "Boris Johnson",
@@ -143,6 +149,7 @@ The `_imageArray` type represents a group of images defined by the _asset type. 
 ```json
 {
   "type": "_imageArray",
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [{
      "_asset": {
         "altText": "An example image",
@@ -182,6 +189,7 @@ The `_component` type represents an existing Contensis component making the Canv
 ```json
 {
   "type": "_component",
+  "id": "gOZ4Mg", // Hashed GUID
   "value": {
     THIS WOULD BE THE COMPONENT IN CONTENSIS TODAY
   },

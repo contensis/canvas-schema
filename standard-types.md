@@ -25,7 +25,7 @@ This is a paragraph
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": "This is a paragraph"
 }
 ```
@@ -39,7 +39,7 @@ This is some **bold** _text_
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_fragment",
@@ -76,7 +76,7 @@ Check out our latest [Boston Fern](https://www.leif.com/plants/boston-fern) plan
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_fragment",
@@ -109,7 +109,7 @@ This is some **bold** **text**
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_fragment",
@@ -148,7 +148,7 @@ This is a sentence that **has a link to the [BBC](https://www.bbc.co.uk) that is
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_fragment",
@@ -195,7 +195,7 @@ This is a lede paragraph
 ```json
 {
   "type": "_paragraph",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": "This is a paragraph",
   "properties": {
     "paragraphType": "lede"
@@ -226,7 +226,7 @@ A `_heading` represents a block of text that is used as a section header, it has
 ```json
 {
   "type": "_heading",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": "This is my heading",
   "properties": {
     "level": 1
@@ -243,7 +243,7 @@ A `_heading` represents a block of text that is used as a section header, it has
 ```json
 {
   "type": "_heading",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_fragment",
@@ -292,7 +292,7 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 ```json
 {
   "type": "_list",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_listItem",
@@ -341,7 +341,7 @@ A `_list` represents a flat or nested list of content. Each item in a list is re
 ```json
 {
   "type": "_list",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_listItem",
@@ -394,7 +394,7 @@ The `_code` type represents a code example, with an optional `language` property
 ```json
 {
   "type": "_code",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": {
     "code": "console.log(\"hello world\");",
     "language": "javascript",
@@ -426,7 +426,7 @@ The `_table` type represents a table of data, a `_table` is broken up into a tab
 ```json
 {
   "type": "_table",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": [
     {
       "type": "_tableCaption",
@@ -502,7 +502,7 @@ The `_quote` type represents a quotation with an optional source and citation pr
 ```json
 {
   "type": "_quote",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": "Stay hungry stay foolish",
   "properties": {
       "source": "Steve Jobs",
@@ -527,14 +527,14 @@ The `_divider` type defines a dividing break in content, usually rendered as a f
 ```json
 {
   "type": "_divider",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
 }
 ```
 
 ```json
 {
   "type": "_divider",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": {
     "style": "dashed",
   }
@@ -559,7 +559,7 @@ The `_panel` type represents a block of text which is emphasised in a document t
 ```json
 {
   "type": "_panel",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": "This is a call out message",
   "properties": {
     "panelType": "info | note | warning | success | error"
@@ -585,7 +585,7 @@ The `_embed` type takes a URL of a service to generate a preview of the URL you 
 ```json
 {
   "type": "_embed",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": {
     "url": "https://www.youtube.com/watch?v=ArOMXELHiLw",
     "caption": "An overview video of the Contensis CMS"
@@ -613,7 +613,7 @@ The `_bookmark` type takes a URL and generates a bookmark card using [Open Graph
 ```json
 {
   "type": "_bookmark",
-  "id": "4f05979f-d8cf-4568-9045-05731a33f243", // Unique key
+  "id": "gOZ4Mg", // Hashed GUID
   "value": {
     "url": "https://www.contensis.com",
     "title": "Contensis - enterprise web content management system (CMS)",
