@@ -20,6 +20,7 @@ This is a [link](node: 1234) to the Contensis product page.
       "properties": {
         "link": {
           "node": "1234",
+          "entryId: "0000-0000-0000-0000",
           "url": "/products/contensis",
           "newTab": false // property name to be decided on
         },
