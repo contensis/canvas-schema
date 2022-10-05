@@ -181,6 +181,21 @@ As an author, I want to insert an entry into my canvas so that the content can b
 }
 ```
 
+
+## Form
+
+As an author, I want to insert a form into my canvas so that the form fields can be rendered at the point of insertion on my front-end site.
+
+```json
+{
+  "type": "_form",
+  "value": {
+    "sys": { Standard sysObject},
+    "formTitle": "Contact us",
+  }
+}
+```
+
 ## Asset
 
 As an author, I want to insert an answer into my canvas so that the content can be rendered at the point of insertion on my front-end site.
