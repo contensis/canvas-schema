@@ -403,3 +403,56 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234"><strong>Ch
     ]
 }
 ```
+
+## Inline entry
+
+```html
+The CEO is {Person: Richard Saunders}
+```
+
+### Management JSON
+
+```json
+{
+    "type": "_paragraph",
+    "value": [
+        {
+            "type": "_fragment",
+            "value": "The CEO is "
+        },
+        {
+            "type": "_inlineEntry",
+            "value": {
+                "sys": {
+                    "id": "0000-0000-0000-1234"
+                }
+            }
+        }
+    ]
+}
+```
+
+### Delivery JSON
+
+```json
+{
+    "type": "_paragraph",
+    "value": [
+        {
+            "type": "_fragment",
+            "value": "The CEO is "
+        },
+        {
+            "type": "_inlineEntry",
+            "value": {
+                "sys": {
+                    "id": "0000-0000-0000-1234"
+                },
+                "entryTitle": "Richard Saunders",
+                "entryDescription": "Richard is the founder and CEO of Zengenti",
+                "entryThumbnail": null
+            }
+        }
+    ]
+}
+```
