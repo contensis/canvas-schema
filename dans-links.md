@@ -17,7 +17,7 @@ A link to the <a href="http://www.bbc.co.uk">BBC</a>
         },
         {
             "type": "_hyperlink",
-            "id": "gOZ4Mg3",
+            "id": "gOZ4Mg2",
             "value": "BBC",
             "properties": {
                 "url": "http://www.bbc.co.uk"                
@@ -415,13 +415,16 @@ The CEO is {Person: Richard Saunders}
 ```json
 {
     "type": "_paragraph",
+    "id": "gOZ4Mg1",
     "value": [
         {
             "type": "_fragment",
+            "id": "gOZ4Mg2",
             "value": "The CEO is "
         },
         {
             "type": "_inlineEntry",
+            "id": "gOZ4Mg3",
             "value": {
                 "sys": {
                     "id": "0000-0000-0000-1234"
@@ -437,13 +440,16 @@ The CEO is {Person: Richard Saunders}
 ```json
 {
     "type": "_paragraph",
+    "id": "gOZ4Mg1",
     "value": [
         {
             "type": "_fragment",
+            "id": "gOZ4Mg2",
             "value": "The CEO is "
         },
         {
             "type": "_inlineEntry",
+            "id": "gOZ4Mg3",
             "value": {
                 "sys": {
                     "id": "0000-0000-0000-1234"
