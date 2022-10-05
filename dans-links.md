@@ -462,3 +462,36 @@ The CEO is {Person: Richard Saunders}
     ]
 }
 ```
+
+## Hyperlink and anchor
+
+```html
+<a href="#gOZ4Mg4">A link to an anchor</a> the anchor is here <a id="gOZ4Mg4"></a>
+```
+
+```json
+{
+    "type": "_paragraph",
+    "id": "gOZ4Mg1",
+    "value": [
+        {
+            "type": "_hyperlink",
+            "id": "gOZ4Mg2",
+            "value": "A link to an anchor",
+            "properties": {
+                "anchor": "gOZ4Mg4"                
+            }
+        },
+        {
+            "type": "_fragment",
+            "id": "gOZ4Mg3",
+            "value": " the anchor is here "
+        },
+        {
+            "type": "_anchor",
+            "id": "gOZ4Mg4",
+            "value": ""
+        }
+    ]
+}
+```
