@@ -466,7 +466,7 @@ The CEO is {Person: Richard Saunders}
 ## Hyperlink and anchor
 
 ```html
-<a href="#gOZ4Mg4">A link to an anchor</a> the anchor is here <a id="gOZ4Mg4"></a>
+<a href="#gOZ4Mg2">Skip to main content</a> <a id="gOZ4Mg3"></a> Main content is here
 ```
 
 ```json
@@ -477,20 +477,23 @@ The CEO is {Person: Richard Saunders}
         {
             "type": "_hyperlink",
             "id": "gOZ4Mg2",
-            "value": "A link to an anchor",
+            "value": "Skip to main content",
             "properties": {
-                "anchor": "gOZ4Mg4"                
+                "anchor": "gOZ4Mg3"                
+            }
+        },
+        {
+            "type": "_anchor",
+            "id": "gOZ4Mg3",
+            "value": "",
+            "properties": {
+                "name": "Main content" // this is so it can be easily identified in the UI
             }
         },
         {
             "type": "_fragment",
-            "id": "gOZ4Mg3",
-            "value": " the anchor is here "
-        },
-        {
-            "type": "_anchor",
             "id": "gOZ4Mg4",
-            "value": ""
+            "value": " Main content is here"
         }
     ]
 }
