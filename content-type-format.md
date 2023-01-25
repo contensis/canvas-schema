@@ -294,10 +294,93 @@ The *decorator* property in validations should match a decorator in the canvas j
                     }
                 ],
                 "message": {
-                    "en-GB": "This decoartor is not permitted."
+                    "en-GB": "This decorator is not permitted."
                 }
             }
         }
     }
+}
+```
+
+## Allowing generic properties
+
+Some properties are available on all types and decorators, at the moment this only *id*, again no validation means all properties are output
+
+```json
+{
+    "id": "canvasField",
+    "name": {
+        "en-GB": "Canvas Field"
+    },
+    "dataType": "objectArray",
+    "dataFormat": "canvas",
+    "validations": {
+        "canvas": {
+            "allowedProperties": {
+                "properties": [
+                    {
+                        "property": "id"
+                    }
+                ],
+                "message": {
+                    "en-GB": "This only the id property is allowed."
+                }
+            }
+        }
+    }
+}
+```
+
+### Turn off all generic properties
+
+```json
+{
+    "id": "canvasField",
+    "name": {
+        "en-GB": "Canvas Field"
+    },
+    "dataType": "objectArray",
+    "dataFormat": "canvas",
+    "validations": {
+        "canvas": {
+            "allowedProperties": {
+                "properties": [],
+                "message": {
+                    "en-GB": "The id property is not allowed."
+                }
+            }
+        }
+    }
+}
+```
+
+## Editor settings
+
+With the exception of *image* I don't think any of these would be turned off, if an action is not specified it is enabled
+
+```json
+{
+    "id": "canvasField",
+    "name": {
+        "en-GB": "Canvas Field"
+    },
+    "dataType": "objectArray",
+    "dataFormat": "canvas",
+    "editor": {
+		"id": "canvas",
+		"instructions": {},
+		"properties": {
+			"uploadPath": "/image-library",
+            "actions": {
+                "contentEditable": true,
+				"customCommand": true,
+				"deleteItem": true,
+				"duplicate": true,
+				"editorPanel": true,
+				"order": true,
+                "image": ["crop", "upload"]
+            }
+		}
+	}
 }
 ```
