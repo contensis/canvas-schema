@@ -144,7 +144,7 @@ Allow all types but only javascript as a code language
 
 ### Specific validations for each type
 
-All the validations for specific type, if absent all will be allowed ie. if no languages are specified for _code then all languages can be used.
+All the validations for specific type, if absent all will be allowed ie. if no languages are specified for _code_ then all languages can be used.
 
 ```json
 {
@@ -263,9 +263,7 @@ The *decorator* property in validations should match a decorator in the canvas j
                         "decorator": "*"
                     }
                 ],
-                "message": {
-                    "en-GB": "This decoartor is not permitted."
-                }
+                "message": {}
             }
         }
     }
@@ -323,7 +321,7 @@ Some properties are available on all types and decorators, at the moment this on
                     }
                 ],
                 "message": {
-                    "en-GB": "This only the id property is allowed."
+                    "en-GB": "Only the id property is allowed."
                 }
             }
         }
@@ -367,20 +365,23 @@ With the exception of *image* I don't think any of these would be turned off, if
     "dataType": "objectArray",
     "dataFormat": "canvas",
     "editor": {
-		"id": "canvas",
-		"instructions": {},
-		"properties": {
-			"uploadPath": "/image-library",
+        "id": "canvas",
+        "instructions": {},
+        "properties": {
+            "uploadPath": "/image-library",
             "actions": {
                 "contentEditable": true,
-				"customCommand": true,
-				"deleteItem": true,
-				"duplicate": true,
-				"editorPanel": true,
-				"order": true,
-                "image": ["crop", "upload"]
+                "customCommand": true,
+                "deleteItem": true,
+                "duplicate": true,
+                "editorPanel": true,
+                "order": true,
+                "image": [
+                    "crop",
+                    "upload"
+                ]
             }
-		}
-	}
+        }
+    }
 }
 ```
