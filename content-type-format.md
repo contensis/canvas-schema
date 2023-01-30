@@ -84,7 +84,7 @@ Only allow code and only javascript as a language
                     {
                         "type": "_code",
                         "languages": {
-                            "languages": [
+                            "allowed": [
                                 "Javascript"
                             ],
                             "message": {
@@ -124,7 +124,7 @@ Allow all types but only javascript as a code language
                     {
                         "type": "_code",
                         "languages": {
-                            "languages": [
+                            "allowed": [
                                 "Javascript"
                             ],
                             "message": {
@@ -161,7 +161,7 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_code",
                         "languages": {
-                            "languages": [
+                            "allowed": [
                                 "Javascript"
                             ],
                             "message": {
@@ -172,16 +172,32 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_component",
                         "components": {
-                            "components": [
+                            "allowed": [
                                 "addressComponent"
                             ],
                             "message": {}
                         }
                     },
                     {
+						"type": "_fragment",
+						"decorators": {
+							"allowed": [
+								{
+									"decorator": "emphasis"
+								},
+								{
+									"decorator": "strong"
+								}
+							],
+							"message": {
+								"en-GB": "This decorator is not permitted."
+							}
+						}
+					},
+                    {
                         "type": "_heading",
                         "levels": {
-                            "levels": [
+                            "allowed": [
                                 2,
                                 4
                             ],
@@ -191,7 +207,7 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_link",
                         "linkTypes": {
-                            "types": [
+                            "allowed": [
                                 "anchor",
                                 "url",
                                 "entry",
@@ -203,7 +219,7 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_list",
                         "listTypes": {
-                            "types": [
+                            "allowed": [
                                 "ordered",
                                 "unordered"
                             ],
@@ -213,7 +229,7 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_panel",
                         "linkTypes": {
-                            "types": [
+                            "allowed": [
                                 "info",
                                 "note",
                                 "warning",
@@ -226,7 +242,7 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                     {
                         "type": "_paragraph",
                         "paragraphTypes": {
-                            "types": [
+                            "allowed": [
                                 "lede"
                             ],
                             "message": {}
@@ -257,13 +273,20 @@ The *decorator* property in validations should match a decorator in the canvas j
     "dataFormat": "canvas",
     "validations": {
         "canvas": {
-            "allowedDecorators": {
-                "decorators": [
+            "allowedTypes": {
+                "types": [
                     {
-                        "decorator": "*"
-                    }
-                ],
-                "message": {}
+						"type": "_fragment",
+						"decorators": {
+							"allowed": [
+								{ "decorator": "*" }
+							],
+							"message": {
+								"en-GB": "This decorator is not permitted."
+							}
+						}
+					}
+                ]
             }
         }
     }
@@ -282,70 +305,21 @@ The *decorator* property in validations should match a decorator in the canvas j
     "dataFormat": "canvas",
     "validations": {
         "canvas": {
-            "allowedDecorators": {
-                "decorators": [
+            "allowedTypes": {
+                "types": [
                     {
-                        "decorator": "emphasis"
-                    },
-                    {
-                        "decorator": "strong"
-                    }
-                ],
-                "message": {
-                    "en-GB": "This decorator is not permitted."
-                }
-            }
-        }
-    }
-}
-```
-
-## Allowing generic properties
-
-Some properties are available on all types and decorators, at the moment this only *id*, again no validation means all properties are output
-
-```json
-{
-    "id": "canvasField",
-    "name": {
-        "en-GB": "Canvas Field"
-    },
-    "dataType": "objectArray",
-    "dataFormat": "canvas",
-    "validations": {
-        "canvas": {
-            "allowedProperties": {
-                "properties": [
-                    {
-                        "property": "id"
-                    }
-                ],
-                "message": {
-                    "en-GB": "Only the id property is allowed."
-                }
-            }
-        }
-    }
-}
-```
-
-### Turn off all generic properties
-
-```json
-{
-    "id": "canvasField",
-    "name": {
-        "en-GB": "Canvas Field"
-    },
-    "dataType": "objectArray",
-    "dataFormat": "canvas",
-    "validations": {
-        "canvas": {
-            "allowedProperties": {
-                "properties": [],
-                "message": {
-                    "en-GB": "The id property is not allowed."
-                }
+						"type": "_fragment",
+						"decorators": {
+							"allowed": [
+								{ "decorator": "emphasis" },
+                                { "decorator": "strong" }
+							],
+							"message": {
+								"en-GB": "This decorator is not permitted."
+							}
+						}
+					}
+                ]
             }
         }
     }
