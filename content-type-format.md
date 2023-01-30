@@ -179,21 +179,21 @@ All the validations for specific type, if absent all will be allowed ie. if no l
                         }
                     },
                     {
-						"type": "_fragment",
-						"decorators": {
-							"allowed": [
-								{
-									"decorator": "emphasis"
-								},
-								{
-									"decorator": "strong"
-								}
-							],
-							"message": {
-								"en-GB": "This decorator is not permitted."
-							}
-						}
-					},
+			"type": "_fragment",
+			"decorators": {
+			    "allowed": [
+			        {
+				    "decorator": "emphasis"
+			        },
+			        {
+				    "decorator": "strong"
+				}
+			    ],
+			    "message": {
+				"en-GB": "This decorator is not permitted."
+			    }
+			}
+		    },
                     {
                         "type": "_heading",
                         "levels": {
@@ -276,16 +276,16 @@ The *decorator* property in validations should match a decorator in the canvas j
             "allowedTypes": {
                 "types": [
                     {
-						"type": "_fragment",
-						"decorators": {
-							"allowed": [
-								{ "decorator": "*" }
-							],
-							"message": {
-								"en-GB": "This decorator is not permitted."
-							}
-						}
-					}
+		        "type": "_fragment",
+			"decorators": {
+			    "allowed": [
+			        { "decorator": "*" }
+			    ],
+			    "message": {
+			        "en-GB": "This decorator is not permitted."
+			    }
+			}
+	            }
                 ]
             }
         }
@@ -308,17 +308,17 @@ The *decorator* property in validations should match a decorator in the canvas j
             "allowedTypes": {
                 "types": [
                     {
-						"type": "_fragment",
-						"decorators": {
-							"allowed": [
-								{ "decorator": "emphasis" },
+		        "type": "_fragment",
+			"decorators": {
+			    "allowed": [
+			        { "decorator": "emphasis" },
                                 { "decorator": "strong" }
-							],
-							"message": {
-								"en-GB": "This decorator is not permitted."
-							}
-						}
-					}
+			    ],
+			    "message": {
+			        "en-GB": "This decorator is not permitted."
+			    }
+			}
+		    }
                 ]
             }
         }
