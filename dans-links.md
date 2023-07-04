@@ -16,11 +16,11 @@ A link to the <a href="http://www.bbc.co.uk">BBC</a>
             "value": "A link to the "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "BBC",
             "properties": {
-                "url": "http://www.bbc.co.uk"                
+                "uri": "http://www.bbc.co.uk"                
             }
         }
     ]
@@ -46,7 +46,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234">Cheddar</a
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
@@ -74,7 +74,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234">Cheddar</a
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
@@ -86,7 +86,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234">Cheddar</a
                     "entryTitle": "Cheddar",
                     "entryDescription": "Put it on toast"
                 },
-                "url": "/en-GB/cheeses/cheddar"
+                "uri": "/en-GB/cheeses/cheddar"
             }
         }
     ]
@@ -112,7 +112,7 @@ This is my favourite fromage <a href="/entries?id=0000-0000-0000-1234&language=f
             "value": "This is my favourite fromage "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Le Cheddar",
             "properties": {
@@ -141,7 +141,7 @@ This is my favourite fromage <a href="/entries?id=0000-0000-0000-1234&language=f
             "value": "This is my favourite fromage "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Le Cheddar",
             "properties": {
@@ -153,7 +153,7 @@ This is my favourite fromage <a href="/entries?id=0000-0000-0000-1234&language=f
                     "entryTitle": "Le Cheddar",
                     "entryDescription": "Dans le pain"
                 },
-                "url": "/fr-FR/fromages/le-cheddar"
+                "uri": "/fr-FR/fromages/le-cheddar"
             }
         }
     ]
@@ -179,7 +179,7 @@ This is my favourite cheese <a href="/nodes?id=0000-0000-0000-1234">Cheddar</a>
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
@@ -205,7 +205,7 @@ This is my favourite cheese <a href="/nodes?id=0000-0000-0000-1234">Cheddar</a>
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
@@ -214,9 +214,10 @@ This is my favourite cheese <a href="/nodes?id=0000-0000-0000-1234">Cheddar</a>
                     "id": "0000-0000-0000-1234",
                     "language": "en-GB",
                     "displayName": "Cheddar",
-                    "slug": "cheddar"
+                    "slug": "cheddar",
+                    "entry: {...}
                 },
-                "url": "/en-GB/cheeses/cheddar"
+                "uri": "/en-GB/cheeses/cheddar"
             }
         }
     ]
@@ -243,7 +244,7 @@ This is my favourite fromage <a href="/nodes?id=0000-0000-0000-1234&language=fr-
             "value": "This is my favourite fromage "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Le Cheddar",
             "properties": {
@@ -270,7 +271,7 @@ This is my favourite fromage <a href="/nodes?id=0000-0000-0000-1234&language=fr-
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
@@ -281,7 +282,7 @@ This is my favourite fromage <a href="/nodes?id=0000-0000-0000-1234&language=fr-
                     "displayName": "le Cheddar",
                     "slug": "le-cheddar"
                 },
-                "url": "/fr-FR/fromages/le-cheddar"
+                "uri": "/fr-FR/fromages/le-cheddar"
             }
         }
     ]
@@ -307,7 +308,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234"><strong>Ch
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": [
                 {
@@ -361,7 +362,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234"><strong>Ch
             "value": "This is my favourite cheese "
         },
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg3",
             "value": [
                 {
@@ -399,7 +400,7 @@ This is my favourite cheese <a href="/entries?id=0000-0000-0000-1234"><strong>Ch
                     "entryTitle": "Cheddar",
                     "entryDescription": "Put it on toast"
                 },
-                "url": "/en-GB/cheeses/cheddar"
+                "uri": "/en-GB/cheeses/cheddar"
             }
         }
     ]
@@ -477,7 +478,7 @@ The CEO is {Person: Richard Saunders}
     "id": "gOZ4Mg1",
     "value": [
         {
-            "type": "_hyperlink",
+            "type": "_link",
             "id": "gOZ4Mg2",
             "value": "Skip to main content",
             "properties": {
