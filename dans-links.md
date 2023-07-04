@@ -209,7 +209,6 @@ This is my favourite cheese <a href="/nodes?id=0000-0000-0000-1234">Cheddar</a>
             "id": "gOZ4Mg3",
             "value": "Cheddar",
             "properties": {
-                // should this have data for the specific language
                 "node": {
                     "id": "0000-0000-0000-1234",
                     "language": "en-GB",
