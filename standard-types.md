@@ -8,11 +8,11 @@ The `_paragraph` type represents a standard block of text, either as plain text 
 
 | Property | Value |
 |:--|:--|
-| paragraphType | none (default), lede |
+| paragraphType | none (default), lead |
 
 ### Validation
 
-**Lede** – there can only be a single lede paragraph in a canvas.
+**Lead** – there can only be a single lead paragraph in a canvas.
 
 ### Examples
 
