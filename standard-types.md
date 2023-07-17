@@ -184,12 +184,12 @@ This is a sentence that **has a link to the [BBC](https://www.bbc.co.uk) that is
 }
 ```
 
-#### Lede paragraph
+#### Lead paragraph
 
-Represents a lede introductory paragraph.
+Represents a lead introductory paragraph.
 
 ```md
-This is a lede paragraph
+This is a lead paragraph
 ```
 
 ```json
@@ -198,7 +198,7 @@ This is a lede paragraph
   "id": "gOZ4Mg", // Hashed GUID
   "value": "This is a paragraph",
   "properties": {
-    "paragraphType": "lede"
+    "paragraphType": "lead"
   }
 }
 ```
