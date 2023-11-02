@@ -494,8 +494,9 @@ The `_quote` type represents a quotation with an optional source and citation pr
 | Property | Value |
 |:--|:--|
 | value |  Can be either a `string` or a `fragment` array, required |
-| source | optional, required |
+| source | optional |
 | citation | optional |
+| url | optional |
 
 ### Example
 
@@ -506,7 +507,8 @@ The `_quote` type represents a quotation with an optional source and citation pr
   "value": "Stay hungry stay foolish",
   "properties": {
       "source": "Steve Jobs",
-      "citation": "https://www.apple.com/stevejobs/"
+      "citation": "Steve Jobs, the autobiography",
+      "url": "https://www.apple.com/stevejobs/"
    }
 }
 ```
@@ -561,6 +563,30 @@ The `_panel` type represents a block of text which is emphasised in a document t
   "type": "_panel",
   "id": "gOZ4Mg", // Hashed GUID
   "value": "This is a call out message",
+  "properties": {
+    "panelType": "info | note | warning | success | error"
+  },
+}
+```
+### With fragments
+
+```json
+{
+  "type": "_panel",
+  "id": "gOZ4Mg", // Hashed GUID  
+  "value": [
+    {
+      "type": "_fragment",
+      "value": "This is a "
+    },
+    {
+      "type": "_fragment",
+      "value": "call out message",
+      "properties": {
+        "decorators": ["strong"]
+      }
+    }
+  ],
   "properties": {
     "panelType": "info | note | warning | success | error"
   },
