@@ -198,3 +198,77 @@ The `_component` type represents an existing Contensis component making the Canv
   }
 }
 ```
+
+
+
+## _entry
+
+The `_entry` type represents an existing Contensis entry. Its definition is defined by its existing structure.
+
+### Example
+
+**Status**: ⚠️ Needs further discussion
+
+```json
+{
+  "id": "c4dfa05a",
+  "type": "_entry",
+  "value": {
+    "sys": {
+      "projectId": "contensis",
+      "workflow": {
+        "id": "contensisEntryBasic",
+        "state": "versionComplete",
+        "allowedEvents": [
+          "versionComplete.sysArchive",
+          "versionComplete.sysDelete",
+          "versionComplete.sysSetPublishSchedule",
+          "versionComplete.sysSetUnpublishSchedule",
+          "versionComplete.sysUnpublish",
+          "versionComplete.sysUnpublishScheduleInvoke",
+          "versionComplete.sysUpdate"
+        ],
+        "transition": {
+          "invoked": "2021-09-22T07:10:57.2094504Z",
+          "invokedBy": "r.saunders",
+          "from": "draft",
+          "event": "publish",
+          "data": null
+        }
+      },
+      "metadata": {},
+      "version": {
+        "createdBy": "r.saunders",
+        "created": "2021-09-20T12:33:15.287327Z",
+        "modifiedBy": "r.saunders",
+        "modified": "2021-09-22T07:10:52.2941535Z",
+        "publishedBy": "r.saunders",
+        "published": "2021-09-22T07:10:57.2094504Z",
+        "deletedBy": null,
+        "deleted": null,
+        "archivedBy": null,
+        "archived": null,
+        "versionNo": "2.0"
+      },
+      "owner": "r.saunders",
+      "isPublished": true,
+      "slug": "set-a-publishing-schedule-in-the-basic-workflow",
+      "unavailableLanguages": [],
+      "deletedLanguages": [],
+      "archivedLanguages": [],
+      "translationState": "none",
+      "schedules": {},
+      "id": "a914add7-caa1-492e-af92-61a6831e9a64",
+      "dataFormat": "entry",
+      "language": "en-GB",
+      "contentTypeId": "accessibleVideo",
+      "availableLanguages": ["en-GB"],
+      "linkProperties": { "type": "entry" }
+    },
+    "entryTitle": "Contensis 15.1 - Set a publishing schedule in the basic workflow",
+    "entryDescription": null,
+    "entryThumbnail": null
+  }
+}
+
+```
